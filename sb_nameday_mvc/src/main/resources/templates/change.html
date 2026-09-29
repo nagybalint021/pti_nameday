@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Change</title>
+</head>
+<body>
+    <div th:if="${changeDTO != null}">
+        <p th:text="${changeDTO.getStatus()}"></p>
+        <p th:text="${changeDTO.getMessage()}"></p>
+    </div>
+
+    <h3>Change date by name:</h3>
+    <form action="/nameday/changedate" method="post">
+        <label>Name:
+            <input type="text" name="name" />
+        </label>
+        <br>
+        <label>New Date:
+            <input type="text" name="date" />
+        </label>
+        <br>
+        <br>
+        <input type="submit" value="Change date" />
+    </form>
+
+    <h3>Change name by date:</h3>
+    <form action="/nameday/changename" method="post">
+        <label>Date:
+            <input type="text" name="date" />
+        </label>
+        <br>
+        <label>New Name:
+            <input type="text" name="name" />
+        </label>
+        <br>
+        <br>
+        <input type="submit" value="Change name" />
+    </form>
+</body>
+</html>
