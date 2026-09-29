@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Namedays</title>
+</head>
+<body>
+    <p th:if="${namedaysDTO == null}">Error loading namedays.</p>
+
+    <div th:if="${namedaysDTO != null}">
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Name</th>
+            </tr>
+            <tr th:each="nameday : ${namedaysDTO}">
+                <td th:text="${nameday.getDate()}"></td>
+                <td th:text="${nameday.getName()}"></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
